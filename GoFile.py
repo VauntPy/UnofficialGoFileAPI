@@ -13,9 +13,9 @@ class GoFile:
     defaultWebsiteToken = '12345'
     chunk_size = 8388608 # IN BYTES
     timeout = 15
-    retries = 30 # retries = connect + read
     connect = 15
     read = 15
+    retries = connect + read
 
     def __init__(self) -> None:
         self.http = requests.Session()
