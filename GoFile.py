@@ -228,5 +228,5 @@ class GoFile:
 gf = GoFile()
 # gf.quickUpload()
 # gf.downloadFiles()
-gf.copyContent('7f6ace5e-24b4-4288-a737-f91430e275f4' )
+
 
