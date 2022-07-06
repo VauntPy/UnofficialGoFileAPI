@@ -1,4 +1,3 @@
-from urllib import response
 from requests_toolbelt import MultipartEncoder
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
