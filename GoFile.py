@@ -183,6 +183,24 @@ class GoFile:
         else:
             print("Folder Empty")
 
+    # COPY ONE OR MULTIPLE CONTENTS TO ANOTHER FOLDER // ONLY FOR PREMIUM USERS
+    def copyContent(self, contentsId, folderIdDest= '', token= ''):
+        if any(token):
+            token = token
+        else:
+            self.newTempAccount()
+            folderIdDest = self.rootFolderId
+            token = self.token
+        data = {
+            'contentsId': contentsId, 
+            'folderIdDest': folderIdDest, 
+            'token': token
+            }
+        print(data)
+        s = self.http.put(url = "https://api.gofile.io/copyContent", data= data).json()
+        print(s['status'])
+
+
     # BEST SERVER TO UPLOAD FILES
     @staticmethod
     def optimalServer():
@@ -209,5 +227,6 @@ class GoFile:
 
 gf = GoFile()
 # gf.quickUpload()
-gf.downloadFiles()
+# gf.downloadFiles()
+gf.copyContent('7f6ace5e-24b4-4288-a737-f91430e275f4' )
 
