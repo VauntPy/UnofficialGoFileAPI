@@ -196,8 +196,8 @@ class GoFile:
             'token': token
             }
         print(data)
-        s = self.http.put(url = "https://api.gofile.io/copyContent", data= data).json()
-        print(s['status'])
+        response = self.http.put(url = "https://api.gofile.io/copyContent", data= data).json()
+        print(response['status'])
 
 
     # BEST SERVER TO UPLOAD FILES
