@@ -183,6 +183,19 @@ class GoFile:
         else:
             print("Folder Empty")
 
+    def deleteContent(self, contentsId, token = ''):
+        if any(token):
+            token = token
+        else:
+            token = self.token
+            data = {
+                'contentsId': contentsId,
+                'token': token
+            }
+        
+        response = self.http.delete(url = "https://api.gofile.io/deleteContent", data = data).json()
+        print(response['status'])
+
     # BEST SERVER TO UPLOAD FILES
     @staticmethod
     def optimalServer():
